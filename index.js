@@ -7,6 +7,8 @@ function getRepositories() {
 
 function showRepositories(event, data) {
   const repos = JSON.parse(this.responseText)
+  // get the innerHTML of the template script tag to compile into a template 
+  // function that the JSON response is passed into
   const src = document.getElementById("repository-template").innerHTML
   const template = Handlebars.compile(src)
   const repoList = template(repos)
