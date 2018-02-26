@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   Handlebars.registerPartial("authorPartial", document.getElementById("author-partial-template").innerHTML)
 });
 
+// initiate a getRepositories function when a user clicks the "Get Repositories"
+// anchor tag
 function getRepositories() {
   const req = new XMLHttpRequest()
   req.addEventListener("load", showRepositories);
