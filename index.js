@@ -1,9 +1,9 @@
-// register the partial with Handlebars when the page loads
+// Register the partial with Handlebars when the page loads
 document.addEventListener("DOMContentLoaded", function(event) {
   Handlebars.registerPartial("authorPartial", document.getElementById("author-partial-template").innerHTML)
 });
 
-// initiate a getRepositories function when a user clicks the "Get Repositories"
+// Initiate a getRepositories function when a user clicks the "Get Repositories"
 // anchor tag
 function getRepositories() {
   const req = new XMLHttpRequest()
@@ -15,9 +15,9 @@ function getRepositories() {
 function showRepositories(event, data) {
   const repos = JSON.parse(this.responseText)
   // We get the innerHTML of our template script tag to compile into a template 
-  // function that we pass our JSON response into. 
-  // Since we are giving the template function the entire collection of 
-  // repository objects, adding new fields to our template is as easy as 
+  // function that we pass our JSON response into.
+  // Since we are giving the template function the entire collection of
+  // repository objects, adding new fields to our template is as easy as
   // creating the markup
   const src = document.getElementById("repository-template").innerHTML
   const template = Handlebars.compile(src)
